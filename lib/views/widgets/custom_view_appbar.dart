@@ -10,7 +10,7 @@ class CustomViewAppBar extends StatelessWidget {
       children: [
         Text(
           "Notes",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
         ),
         Spacer(
           flex: 1,
