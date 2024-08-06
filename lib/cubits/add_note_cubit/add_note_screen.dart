@@ -25,14 +25,14 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       body: BlocConsumer<AddNoteCubit, AddNoteState>(
         bloc: screenCubit,
         listener: (BuildContext context, AddNoteState state) {
-          if (state.error != null) {
-            // TODO your code here
-          }
+          // if (state.error != null) {
+          //   // TODO your code here
+          // }
         },
         builder: (BuildContext context, AddNoteState state) {
-          if (state.isLoading) {
-            return Center(child: CircularProgressIndicator());
-          }
+          // if (state.isLoading) {
+          //   return Center(child: CircularProgressIndicator());
+          // }
 
           return buildBody(state);
         },
