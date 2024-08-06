@@ -46,7 +46,9 @@ class CustomNoteItem extends StatelessWidget {
                   color: Colors.black.withOpacity(.4),
                   size: 30,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
               ),
             ),
             Padding(
