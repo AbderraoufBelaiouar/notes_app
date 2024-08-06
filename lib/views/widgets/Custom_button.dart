@@ -1,11 +1,15 @@
-// ignore: must_be_immutable, camel_case_types
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class Custom_button extends StatelessWidget {
-  Custom_button({super.key, required this.onTapFunction, required this.text});
+// ignore: must_be_immutable, camel_case_types
+class customButton extends StatelessWidget {
+  customButton(
+      {super.key,
+      required this.onTapFunction,
+      required this.text,
+      required this.isLoading});
   Function()? onTapFunction;
   final String text;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,13 +21,17 @@ class Custom_button extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color.fromARGB(255, 85, 208, 232),
               borderRadius: BorderRadius.circular(6)),
-          height: 40,
+          height: 60,
           width: double.infinity,
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.black),
-          ),
+          child: !isLoading
+              ? Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.black, fontSize: 22),
+                )
+              : const CircularProgressIndicator(
+                  color: Colors.black,
+                ),
         ),
       ),
     );
