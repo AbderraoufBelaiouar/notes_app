@@ -15,7 +15,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
 
   @override
   void initState() {
-    screenCubit.loadInitialData();
+    // screenCubit.loadInitialData();
     super.initState();
   }
 
