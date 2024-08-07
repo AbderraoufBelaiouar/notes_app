@@ -6,7 +6,7 @@ class CustomViewAppBar extends StatelessWidget {
       {super.key, required this.title, required this.icon, this.onPressed});
   final String title;
   final IconData icon;
-  void Function()? onPressed;
+  Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(

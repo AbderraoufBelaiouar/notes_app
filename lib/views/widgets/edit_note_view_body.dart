@@ -4,6 +4,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 import 'package:notes_app/views/widgets/custom_view_appbar.dart';
+import 'package:notes_app/views/widgets/edit_note_color_view.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
@@ -15,7 +16,7 @@ class EditNoteViewBody extends StatefulWidget {
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title, subTitle;
-
+  int? color;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,6 +30,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             onPressed: () {
               widget.note.title = title ?? widget.note.title;
               widget.note.subtitle = subTitle ?? widget.note.subtitle;
+
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               Navigator.pop(context);
@@ -53,6 +55,12 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             hintText: widget.note.subtitle,
             maxLines: 5,
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          EditNotesColorView(
+            note: widget.note,
+          )
         ],
       ),
     );
