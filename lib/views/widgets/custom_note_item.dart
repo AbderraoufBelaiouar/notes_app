@@ -15,7 +15,9 @@ class CustomNoteItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EditNoteView(),
+            builder: (context) => EditNoteView(
+              note: note,
+            ),
           ),
         );
       },
@@ -37,7 +39,7 @@ class CustomNoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
                 child: Text(
-                  note.Subtitle,
+                  note.subtitle,
                   style: TextStyle(
                       color: Colors.black.withOpacity(.5), fontSize: 18),
                 ),

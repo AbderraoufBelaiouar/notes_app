@@ -58,7 +58,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       var noteModel = NoteModel(
-                          Subtitle: subtitle!,
+                          subtitle: subtitle!,
                           title: title!,
                           Date: formattedCurrentdate,
                           color: Colors.blue.value);

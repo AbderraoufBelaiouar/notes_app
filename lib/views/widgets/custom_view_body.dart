@@ -20,18 +20,19 @@ class _CustomViewbodyState extends State<CustomViewbody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 28.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 28.0),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           CustomViewAppBar(
+            onPressed: () {},
             title: "Notes",
             icon: Icons.search,
           ),
-          Expanded(
+          const Expanded(
             child: NotesListView(),
           ),
         ],

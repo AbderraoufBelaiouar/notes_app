@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/custom_search_icon.dart';
+import 'package:notes_app/views/widgets/custom_icon.dart';
 
 class CustomViewAppBar extends StatelessWidget {
-  const CustomViewAppBar({super.key, required this.title, required this.icon});
+  CustomViewAppBar(
+      {super.key, required this.title, required this.icon, this.onPressed});
   final String title;
   final IconData icon;
+  void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,6 +19,7 @@ class CustomViewAppBar extends StatelessWidget {
           flex: 1,
         ),
         CustomIcon(
+          onPressed: onPressed,
           icon: icon,
         ),
       ],
