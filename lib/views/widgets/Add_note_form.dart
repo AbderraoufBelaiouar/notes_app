@@ -8,8 +8,6 @@ import 'package:notes_app/views/widgets/Custom_button.dart';
 import 'package:notes_app/views/widgets/color_list_view.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 
-import 'package:date_format/date_format.dart';
-
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
     super.key,
@@ -46,9 +44,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(
-            height: 40,
+            height: 10,
           ),
           const ColorsLitView(),
+          const SizedBox(
+            height: 10,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return customButton(
